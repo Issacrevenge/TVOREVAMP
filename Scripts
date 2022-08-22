@@ -1,0 +1,365 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("TVO Revamp Script", "Synapse") 
+local Tab = Window:NewTab("Main Menu")
+local Section = Tab:NewSection("Universal")
+Section:NewButton("Channel Yourself", "", function()
+    print("Clicked")
+    local args = {
+    [1] = "phasmatos magicae",
+    [2] = game:GetService("Players").LocalPlayer.Character,
+    [3] = CFrame.new(Vector3.new(-124.63166046142578, 13.829666137695312, -243.43833923339844), Vector3.new(0.8498799800872803, -0.5211004018783569, -0.07847557961940765)),
+    [4] = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart
+}
+
+game:GetService("ReplicatedStorage").Events.Action.SpellEvent:FireServer(unpack(args))
+end)
+Section:NewButton("Delete channel", "", function()
+    print("Clicked")
+    game.Players.LocalPlayer.Character.Channeled:destroy()
+    game.Players.LocalPlayer.Character.Channeled:destroy()
+end)
+local Section = Tab:NewSection("Cleo")
+Section:NewButton("Inspire Yourself", "", function()
+    print("Clicked")
+    local args = {
+    [1] = game:GetService("Players").LocalPlayer.Character,
+    [2] = Enum.UserInputType.MouseButton1,
+    [3] = "Inspire",
+    [4] = CFrame.new(Vector3.new(72.34286499023438, 13.75339126586914, -135.1629638671875), Vector3.new(0.29185542464256287, -0.2388596385717392, -0.9261568784713745))
+}
+
+game:GetService("ReplicatedStorage").Events.Action.WitchKeybind:FireServer(unpack(args))
+end)
+local Section = Tab:NewSection("Esther")
+Section:NewButton("Make yourself OG", "", function()
+    print("Clicked")
+    local args = {
+    [1] = "fortis lamia",
+    [2] = game:GetService("Players").LocalPlayer.Character,
+    [3] = CFrame.new(Vector3.new(269.0731506347656, 14.140454292297363, -291.0645446777344), Vector3.new(-0.6483819484710693, -0.4274652302265167, -0.62997967004776)),
+    [4] = game:GetService("Players").LocalPlayer.Character.Head
+}
+
+game:GetService("ReplicatedStorage").Events.Action.SpellEvent:FireServer(unpack(args))
+
+end)
+local Section = Tab:NewSection("Freya")
+Section:NewButton("Pendent Trap", "", function()
+    print("Clicked")
+    local args = {
+    [1] = game:GetService("Players").LocalPlayer.Character,
+    [2] = Enum.UserInputType.MouseButton1,
+    [3] = "Pendant Trap",
+    [4] = CFrame.new(Vector3.new(-68.0020980834961, 12.938422203063965, -114.45258331298828), Vector3.new(0.585974931716919, -0.2965046167373657, -0.7541342377662659))
+}
+
+game:GetService("ReplicatedStorage").Events.Action.WitchKeybind:FireServer(unpack(args))
+end)
+local Section = Tab:NewSection("NPC")
+Section:NewButton("Hope Blood", "", function()
+    print("Clicked")
+    local args = {
+    [1] = "HopeBlood"
+}
+
+game:GetService("ReplicatedStorage").Events.System.Dialog:FireServer(unpack(args))
+
+end)
+Section:NewButton("Healing only work 1 time", "", function()
+    print("Clicked")
+    local args = {
+    [1] = "Healing",
+    [2] = workspace.Map.Interactables:FindFirstChild(" ")
+}
+
+game:GetService("ReplicatedStorage").Events.System.Dialog:FireServer(unpack(args))
+
+end)
+Section:NewButton("Get turned", "", function()
+    print("Clicked")
+    local args = {
+    [1] = "TurnVampire",
+    [2] = workspace.Map.Interactables:FindFirstChild(" ")
+}
+
+game:GetService("ReplicatedStorage").Events.System.Dialog:FireServer(unpack(args))
+
+end)
+Section:NewButton("Free Stake Only work 1 time", "", function()
+    print("Clicked")
+    local args = {
+    [1] = "Stake"
+}
+
+game:GetService("ReplicatedStorage").Events.System.Dialog:FireServer(unpack(args))
+
+end)
+local Section = Tab:NewSection("Vampire MUST BE Heretic/Vampire/GOD")
+Section:NewButton("Heal", "", function()
+    print("Clicked")
+    local args = {
+    [1] = game:GetService("Players").LocalPlayer.Character,
+    [2] = Enum.UserInputType.MouseButton1,
+    [3] = "Heal",
+    [4] = CFrame.new(Vector3.new(-44.837303161621094, 14.214372634887695, -223.32675170898438), Vector3.new(0.47864407300949097, -0.23378883302211761, -0.8463112711906433))
+}
+
+game:GetService("ReplicatedStorage").Events.Action.VampireKeybind:FireServer(unpack(args))
+
+
+end)
+Section:NewButton("Inf Energy", "", function()
+    print("Clicked")
+    while true do wait(0,5)
+local args = {
+    [1] = -400,
+    [2] = false
+}
+
+game:GetService("ReplicatedStorage").Events.Gameplay.Energy:FireServer(unpack(args))
+end
+end)
+local Tab = Window:NewTab("Morph")
+local Section = Tab:NewSection("Charecters")
+Section:NewButton("Freya", "", function()
+    print("Clicked")
+    local args = {
+    [1] = "Freya",
+    [2] = "Outfit1"
+}
+
+game:GetService("ReplicatedStorage").Events.System.Character:FireServer(unpack(args))
+
+end)
+
+Section:NewButton("Sheila", "", function()
+    print("Clicked")
+    local args = {
+    [1] = "Sheila",
+    [2] = "Outfit1"
+}
+
+game:GetService("ReplicatedStorage").Events.System.Character:FireServer(unpack(args))
+
+end)
+
+Section:NewButton("Inadu", "", function()
+    print("Clicked")
+        local args = {
+    [1] = "Inadu",
+    [2] = "Outfit1"
+}
+
+game:GetService("ReplicatedStorage").Events.System.Character:FireServer(unpack(args))
+
+end)
+
+Section:NewButton("Lizzie", "", function()
+    print("Clicked")
+    local args = {
+    [1] = "Lizzie",
+    [2] = "Outfit1"
+}
+
+game:GetService("ReplicatedStorage").Events.System.Character:FireServer(unpack(args))
+end)
+
+Section:NewButton("Dark Josie", "", function()
+    print("Clicked")
+    local args = {
+    [1] = "Dark Josie",
+    [2] = "Outfit1"
+}
+
+game:GetService("ReplicatedStorage").Events.System.Character:FireServer(unpack(args))
+end)
+
+Section:NewButton("Qetsiyah", "", function()
+    print("Clicked")
+    local args = {
+    [1] = "Qetsiyah",
+    [2] = "Outfit1"
+}
+
+game:GetService("ReplicatedStorage").Events.System.Character:FireServer(unpack(args))
+end)
+
+Section:NewButton("Cade", "", function()
+    print("Clicked")
+    local args = {
+    [1] = "Cade",
+    [2] = "Outfit1"
+}
+
+game:GetService("ReplicatedStorage").Events.System.Character:FireServer(unpack(args))
+end)
+
+Section:NewButton("Dahlia", "", function()
+    print("Clicked")
+    local args = {
+    [1] = "Dahlia",
+    [2] = "Outfit1"
+}
+
+game:GetService("ReplicatedStorage").Events.System.Character:FireServer(unpack(args))
+end)
+
+Section:NewButton("Josie", "", function()
+    print("Clicked")
+    local args = {
+    [1] = "Josie",
+    [2] = "Outfit1"
+}
+
+game:GetService("ReplicatedStorage").Events.System.Character:FireServer(unpack(args))
+end)
+
+Section:NewButton("Bonnie", "", function()
+    print("Clicked")
+     local args = {
+    [1] = "Bonnie",
+    [2] = "Outfit1"
+}
+
+game:GetService("ReplicatedStorage").Events.System.Character:FireServer(unpack(args))
+end)
+
+Section:NewButton("Cleo", "", function()
+    print("Clicked")
+     local args = {
+    [1] = "Cleo",
+    [2] = "Outfit1"
+}
+
+game:GetService("ReplicatedStorage").Events.System.Character:FireServer(unpack(args))
+end)
+
+Section:NewButton("Davina", "", function()
+    print("Clicked")
+     local args = {
+    [1] = "Davina",
+    [2] = "Outfit1"
+}
+
+game:GetService("ReplicatedStorage").Events.System.Character:FireServer(unpack(args))
+end)
+
+Section:NewButton("Esther", "", function()
+    print("Clicked")
+     local args = {
+    [1] = "Esther",
+    [2] = "Outfit1"
+}
+
+game:GetService("ReplicatedStorage").Events.System.Character:FireServer(unpack(args))
+end)
+
+Section:NewButton("Celeste", "", function()
+    print("Clicked")
+     local args = {
+    [1] = "Celeste",
+    [2] = "Outfit1"
+}
+
+game:GetService("ReplicatedStorage").Events.System.Character:FireServer(unpack(args))
+end)
+Section:NewButton("Hope", "", function()
+    print("Clicked")
+         local args = {
+    [1] = "Hope",
+    [2] = "Outfit1"
+}
+
+game:GetService("ReplicatedStorage").Events.System.Character:FireServer(unpack(args))
+end)
+Section:NewButton("Valerie", "", function()
+    print("Clicked")
+    local args = {
+    [1] = "Valerie",
+    [2] = "Outfit1"
+}
+
+game:GetService("ReplicatedStorage").Events.System.Character:FireServer(unpack(args))
+end)
+Section:NewButton("Mary", "", function()
+    print("Clicked")
+    local args = {
+    [1] = "Mary",
+    [2] = "Outfit1"
+}
+
+game:GetService("ReplicatedStorage").Events.System.Character:FireServer(unpack(args))
+end)
+Section:NewButton("Nora", "", function()
+    print("Clicked")
+    local args = {
+    [1] = "Nora",
+    [2] = "Outfit1"
+}
+
+game:GetService("ReplicatedStorage").Events.System.Character:FireServer(unpack(args))
+end)
+Section:NewButton("Hayley", "", function()
+    print("Clicked")
+    local args = {
+    [1] = "Hayley",
+    [2] = "Outfit1"
+}
+
+game:GetService("ReplicatedStorage").Events.System.Character:FireServer(unpack(args))
+end)
+Section:NewButton("Klaus", "", function()
+    print("Clicked")
+    local args = {
+    [1] = "Klaus",
+    [2] = "Outfit1"
+}
+
+game:GetService("ReplicatedStorage").Events.System.Character:FireServer(unpack(args))
+end)
+Section:NewButton("Elena", "", function()
+    print("Clicked")
+    local args = {
+    [1] = "Elena",
+    [2] = "Outfit1"
+}
+
+game:GetService("ReplicatedStorage").Events.System.Character:FireServer(unpack(args))
+end)
+Section:NewButton("Sybil", "", function()
+    print("Clicked")
+    local args = {
+    [1] = "Sybil",
+    [2] = "Outfit1"
+}
+
+game:GetService("ReplicatedStorage").Events.System.Character:FireServer(unpack(args))
+end)
+Section:NewButton("Jen", "", function()
+    print("Clicked")
+    local args = {
+    [1] = "Jen",
+    [2] = "Outfit1"
+}
+
+game:GetService("ReplicatedStorage").Events.System.Character:FireServer(unpack(args))
+end)
+Section:NewButton("Ken", "", function()
+    print("Clicked")
+    local args = {
+    [1] = "Ken",
+    [2] = "Outfit1"
+}
+
+game:GetService("ReplicatedStorage").Events.System.Character:FireServer(unpack(args))
+end)
+local Tab = Window:NewTab("Infnite Yeild")
+local Section = Tab:NewSection("Admin")
+Section:NewButton("Infnite Yeild Admin", "ButtonInfo", function()
+    print("Clicked")
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+end)
+local Tab = Window:NewTab("Credtis")
+local Section = Tab:NewSection("IssacSwindle;#8552")
+local Section = Tab:NewSection("Claudev0#8849")
+local Section = Tab:NewSection("Ajay 🦭#2006")
