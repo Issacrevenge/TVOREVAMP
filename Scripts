@@ -55,6 +55,21 @@ Section:NewButton("Pendent Trap", "", function()
 
 game:GetService("ReplicatedStorage").Events.Action.WitchKeybind:FireServer(unpack(args))
 end)
+Section:NewButton("Candles", "ButtonInfo", function()
+    print("Clicked")
+    game:GetService("Players").LocalPlayer.Backpack.Candle.Event:FireServer()
+
+end)
+local Section = Tab:NewSection("Inadu")
+Section:NewButton("Bones", "ButtonInfo", function()
+    print("Clicked")
+    local args = {
+    [1] = game:GetService("Players").LocalPlayer.Character.Bone
+}
+
+game:GetService("Players").LocalPlayer.Character.Bone.Event:FireServer(unpack(args))
+
+end)
 local Section = Tab:NewSection("NPC")
 Section:NewButton("Hope Blood", "", function()
     print("Clicked")
@@ -118,6 +133,50 @@ local args = {
 
 game:GetService("ReplicatedStorage").Events.Gameplay.Energy:FireServer(unpack(args))
 end
+end)
+local Tab = Window:NewTab("Spells")
+local Section = Tab:NewSection("Freya")
+Section:NewButton("Telekensis", "ButtonInfo", function()
+    print("Clicked")
+    local args = {
+    [1] = game:GetService("Players").LocalPlayer.Character,
+    [2] = game:GetService("Players").LocalPlayer.Character,
+    [3] = "Telekenisis",
+    [4] = CFrame.new(Vector3.new(111.08369445800781, 16.75164794921875, -199.6184539794922), Vector3.new(0.38856181502342224, 0.005986222065985203, -0.9214032888412476))
+}
+
+game:GetService("ReplicatedStorage").Events.Action.WitchKeybindUp:FireServer(unpack(args))
+end)
+Section:NewButton("Telekensis Stop", "ButtonInfo", function()
+    print("Clicked")
+    local args = {
+    [1] = game:GetService("Players").LocalPlayer.Character,
+    [2] = Enum.UserInputType.MouseButton1,
+    [3] = "Telekenisis",
+    [4] = CFrame.new(Vector3.new(58.781436920166016, 13.68736743927002, -89.1421890258789), Vector3.new(-0.23590771853923798, -0.292817085981369, -0.9266097545623779)),
+    [5] = true
+}
+
+game:GetService("ReplicatedStorage").Events.Action.WitchKeybind:FireServer(unpack(args))
+
+end)
+local Section = Tab:NewSection("Esther")
+Section:NewButton("Stake Creation", "ButtonInfo", function()
+    print("Clicked")
+    local args = {
+    [1] = "vescaram anta intacurum",
+    [3] = CFrame.new(Vector3.new(-243.0763397216797, 30.853809356689453, -172.856201171875), Vector3.new(-0.8131310343742371, -0.2870464324951172, 0.5063815712928772))
+}
+
+game:GetService("ReplicatedStorage").Events.Action.SpellEvent:FireServer(unpack(args))
+wait(10)
+local args = {
+    [1] = "dox toxem dox malum dox divinitum",
+    [3] = CFrame.new(Vector3.new(-239.85183715820312, 32.61482620239258, -172.856201171875), Vector3.new(-0.7858737111091614, -0.20741279423236847, 0.5825654864311218))
+}
+
+game:GetService("ReplicatedStorage").Events.Action.SpellEvent:FireServer(unpack(args))
+
 end)
 local Tab = Window:NewTab("Morph")
 local Section = Tab:NewSection("Charecters")
