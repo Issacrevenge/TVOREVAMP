@@ -18,6 +18,10 @@ Section:NewButton("Delete channel", "", function()
     game.Players.LocalPlayer.Character.Channeled:destroy()
     game.Players.LocalPlayer.Character.Channeled:destroy()
 end)
+Section:NewButton("Anti-Ragdoll", "ButtonInfo", function()
+    print("Clicked")
+    game.Players.LocalPlayer.Character.Ragdoll:destroy()
+end)
 local Section = Tab:NewSection("Cleo")
 Section:NewButton("Inspire Yourself", "", function()
     print("Clicked")
@@ -70,6 +74,43 @@ Section:NewButton("Bones", "ButtonInfo", function()
 game:GetService("Players").LocalPlayer.Character.Bone.Event:FireServer(unpack(args))
 
 end)
+local Section = Tab:NewSection("Vampire MUST BE Heretic/Vampire/GOD")
+Section:NewButton("Heal", "", function()
+    print("Clicked")
+    local args = {
+    [1] = game:GetService("Players").LocalPlayer.Character,
+    [2] = Enum.UserInputType.MouseButton1,
+    [3] = "Heal",
+    [4] = CFrame.new(Vector3.new(-44.837303161621094, 14.214372634887695, -223.32675170898438), Vector3.new(0.47864407300949097, -0.23378883302211761, -0.8463112711906433))
+}
+
+game:GetService("ReplicatedStorage").Events.Action.VampireKeybind:FireServer(unpack(args))
+
+
+end)
+Section:NewButton("Inf Energy", "", function()
+    print("Clicked")
+    while true do wait(0,5)
+local args = {
+    [1] = -400,
+    [2] = false
+}
+
+game:GetService("ReplicatedStorage").Events.Gameplay.Energy:FireServer(unpack(args))
+end
+end)
+local Tab = Window:NewTab("Items")
+local Section = Tab:NewSection("More Items")
+Section:NewButton("Cure MUST HAVE A CURE ALREADY IN INVOTORY", "ButtonInfo", function()
+    print("Clicked")
+    local Cure = game.Players.LocalPlayer.Backpack["The Cure"]:clone()
+Cure.Parent = game.Players.LocalPlayer.Character
+end)
+Section:NewButton("White Stake", "ButtonInfo", function()
+    print("Clicked")
+    local White = game.Players.LocalPlayer.Character.Backpack["White Oak Stake"]:clone()
+White.Parent = game.Players.LocalPlayer.Character
+end)
 local Section = Tab:NewSection("NPC")
 Section:NewButton("Hope Blood", "", function()
     print("Clicked")
@@ -109,34 +150,9 @@ Section:NewButton("Free Stake Only work 1 time", "", function()
 game:GetService("ReplicatedStorage").Events.System.Dialog:FireServer(unpack(args))
 
 end)
-local Section = Tab:NewSection("Vampire MUST BE Heretic/Vampire/GOD")
-Section:NewButton("Heal", "", function()
-    print("Clicked")
-    local args = {
-    [1] = game:GetService("Players").LocalPlayer.Character,
-    [2] = Enum.UserInputType.MouseButton1,
-    [3] = "Heal",
-    [4] = CFrame.new(Vector3.new(-44.837303161621094, 14.214372634887695, -223.32675170898438), Vector3.new(0.47864407300949097, -0.23378883302211761, -0.8463112711906433))
-}
-
-game:GetService("ReplicatedStorage").Events.Action.VampireKeybind:FireServer(unpack(args))
-
-
-end)
-Section:NewButton("Inf Energy", "", function()
-    print("Clicked")
-    while true do wait(0,5)
-local args = {
-    [1] = -400,
-    [2] = false
-}
-
-game:GetService("ReplicatedStorage").Events.Gameplay.Energy:FireServer(unpack(args))
-end
-end)
 local Tab = Window:NewTab("Spells")
 local Section = Tab:NewSection("Freya")
-Section:NewButton("Telekensis", "ButtonInfo", function()
+Section:NewButton("Telekensis Stop", "ButtonInfo", function()
     print("Clicked")
     local args = {
     [1] = game:GetService("Players").LocalPlayer.Character,
@@ -147,7 +163,7 @@ Section:NewButton("Telekensis", "ButtonInfo", function()
 
 game:GetService("ReplicatedStorage").Events.Action.WitchKeybindUp:FireServer(unpack(args))
 end)
-Section:NewButton("Telekensis Stop", "ButtonInfo", function()
+Section:NewButton("Telekensis", "ButtonInfo", function()
     print("Clicked")
     local args = {
     [1] = game:GetService("Players").LocalPlayer.Character,
@@ -173,6 +189,54 @@ wait(10)
 local args = {
     [1] = "dox toxem dox malum dox divinitum",
     [3] = CFrame.new(Vector3.new(-239.85183715820312, 32.61482620239258, -172.856201171875), Vector3.new(-0.7858737111091614, -0.20741279423236847, 0.5825654864311218))
+}
+
+game:GetService("ReplicatedStorage").Events.Action.SpellEvent:FireServer(unpack(args))
+
+end)
+local Section = Tab:NewSection("Heretics")
+Section:NewButton("Combo", "ButtonInfo", function()
+    print("Clicked")
+    local args = {
+    [1] = "strangulo confractus",
+    [3] = CFrame.new(Vector3.new(-716.4407348632812, 14.361977577209473, 574.9988403320312), Vector3.new(0.32415708899497986, -0.21123845875263214, 0.9221173524856567))
+}
+
+game:GetService("ReplicatedStorage").Events.Action.SpellEvent:FireServer(unpack(args))
+wait(1)
+local args = {
+    [1] = "confuso fatina ignos et ignos mortifina",
+    [3] = CFrame.new(Vector3.new(-720.2153930664062, 12.181018829345703, 583.9510498046875), Vector3.new(0.09930308908224106, -0.2153010070323944, 0.9714856743812561))
+}
+
+game:GetService("ReplicatedStorage").Events.Action.SpellEvent:FireServer(unpack(args))
+wait (1)
+local args = {
+    [1] = "impulsa",
+    [3] = CFrame.new(Vector3.new(-717.8175048828125, 17.24953269958496, 565.2676391601562), Vector3.new(0.47461485862731934, -0.09254181385040283, 0.8753153085708618))
+}
+
+game:GetService("ReplicatedStorage").Events.Action.SpellEvent:FireServer(unpack(args))
+
+end)
+local Section = Tab:NewSection("Dark Josie")
+Section:NewButton("Dark Josie Combo", "ButtonInfo", function()
+    print("Clicked")
+    local args = {
+    [1] = "autem",
+    [3] = CFrame.new(Vector3.new(-82.33494567871094, 17.122690200805664, -300.35015869140625), Vector3.new(-0.6610796451568604, 0.008031824603676796, -0.7502727508544922))
+}
+
+game:GetService("ReplicatedStorage").Events.Action.SpellEvent:FireServer(unpack(args))
+local args = {
+    [1] = "harae tamai yioku yomigaerashi tamae",
+    [3] = CFrame.new(Vector3.new(-61.531742095947266, 10.118643760681152, -270.8583068847656), Vector3.new(-0.7017287611961365, -0.12409590184688568, -0.7015532851219177))
+}
+
+game:GetService("ReplicatedStorage").Events.Action.SpellEvent:FireServer(unpack(args))
+local args = {
+    [1] = "i said hey",
+    [3] = CFrame.new(Vector3.new(-127.78421783447266, 17.043302536010742, -303.6947021484375), Vector3.new(-0.8203915357589722, 0.005130785051733255, -0.5717792510986328))
 }
 
 game:GetService("ReplicatedStorage").Events.Action.SpellEvent:FireServer(unpack(args))
