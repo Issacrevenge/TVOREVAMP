@@ -1,13 +1,20 @@
+game.StarterGui:SetCore("SendNotification", {
+                Title = "Issac Studios";
+                Text = "TVO Revamp Script Has loaded!";
+                Button1 = "Alright";
+                Button2 = "Close";
+                Duration = 5;
+        })
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
 local Window = Library.CreateLib("TVO Revamp Script", "Synapse") 
 local Tab = Window:NewTab("Main Menu")
 local Section = Tab:NewSection("Universal")
 Section:NewButton("Channel Yourself", "", function()
     print("Clicked")
-    local args = {
+   local args = {
     [1] = "phasmatos magicae",
     [2] = game:GetService("Players").LocalPlayer.Character,
-    [3] = CFrame.new(Vector3.new(-124.63166046142578, 13.829666137695312, -243.43833923339844), Vector3.new(0.8498799800872803, -0.5211004018783569, -0.07847557961940765)),
+    [3] = CFrame.new(Vector3.new(-149.24205017089844, 14.159297943115234, -154.07615661621094), Vector3.new(-0.7724448442459106, -0.4179568588733673, -0.4781641662120819)),
     [4] = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart
 }
 
@@ -17,6 +24,18 @@ Section:NewButton("Delete channel", "", function()
     print("Clicked")
     game.Players.LocalPlayer.Character.Channeled:destroy()
     game.Players.LocalPlayer.Character.Channeled:destroy()
+end)
+Section:NewButton("Sheild", "ButtonInfo", function()
+    print("Clicked")
+    local args = {
+    [1] = "bulla",
+    [2] = game:GetService("Players").LocalPlayer.Character,
+    [3] = CFrame.new(Vector3.new(-87.07575225830078, 14.097963333129883, -125.78559112548828), Vector3.new(0.5711090564727783, -0.09499652683734894, 0.8153589367866516)),
+    [4] = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart
+}
+
+game:GetService("ReplicatedStorage").Events.Action.SpellEvent:FireServer(unpack(args))
+
 end)
 Section:NewButton("Anti-Ragdoll", "ButtonInfo", function()
     print("Clicked")
@@ -65,14 +84,36 @@ Section:NewButton("Candles", "ButtonInfo", function()
 
 end)
 local Section = Tab:NewSection("Inadu")
-Section:NewButton("Bones", "ButtonInfo", function()
+Section:NewButton("Check for inadu Bones", "ButtonInfo", function()
     print("Clicked")
-    local args = {
-    [1] = game:GetService("Players").LocalPlayer.Character.Bone
-}
+pcall(function()
+for i,v in pairs(game.Workspace.Players:GetDescendants()) do 
+if v.Name == "InaduImmortality"  then
+game:GetService("StarterGui"):SetCore("SendNotification", {Title = v.Name;Text = "Made by NTM"})
 
-game:GetService("Players").LocalPlayer.Character.Bone.Event:FireServer(unpack(args))
+end 
+end
+end)
+end)
+Section:NewButton("Disable Inadu Bones", "ButtonInfo", function()
+    print("Clicked")
+    pcall(function()
+for i,v in pairs(game.Workspace.Map.Interactables:GetDescendants()) do 
+if v.Name == "Disable"  then
 
+ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame
+
+    wait(1.5)
+    for i,v in pairs(workspace:GetDescendants()) do
+            if v:IsA("ProximityPrompt") then
+                fireproximityprompt(v)
+            end
+    end
+
+
+end 
+end
+end)
 end)
 local Section = Tab:NewSection("Vampire MUST BE Heretic/Vampire/GOD")
 Section:NewButton("Heal", "", function()
@@ -86,6 +127,18 @@ Section:NewButton("Heal", "", function()
 
 game:GetService("ReplicatedStorage").Events.Action.VampireKeybind:FireServer(unpack(args))
 
+
+end)
+Section:NewButton("GodHealing", "ButtonInfo", function()
+    print("Clicked")
+    local args = {
+    [1] = game:GetService("Players").LocalPlayer.Character,
+    [2] = Enum.UserInputType.MouseButton1,
+    [3] = "Blood",
+    [4] = CFrame.new(Vector3.new(-23.258277893066406, 14.093950271606445, -257.9762878417969), Vector3.new(-0.2177114635705948, -0.6563482880592346, -0.7223632335662842))
+}
+
+game:GetService("ReplicatedStorage").Events.Action.WitchKeybind:FireServer(unpack(args))
 
 end)
 Section:NewButton("Inf Energy", "", function()
@@ -150,7 +203,7 @@ Section:NewButton("Free Stake Only work 1 time", "", function()
 game:GetService("ReplicatedStorage").Events.System.Dialog:FireServer(unpack(args))
 
 end)
-local Tab = Window:NewTab("Spells")
+local Tab = Window:NewTab("More Things")
 local Section = Tab:NewSection("Freya")
 Section:NewButton("Telekensis Stop", "ButtonInfo", function()
     print("Clicked")
@@ -228,15 +281,82 @@ Section:NewButton("Dark Josie Combo", "ButtonInfo", function()
 }
 
 game:GetService("ReplicatedStorage").Events.Action.SpellEvent:FireServer(unpack(args))
+wait(0)
 local args = {
     [1] = "harae tamai yioku yomigaerashi tamae",
-    [3] = CFrame.new(Vector3.new(-61.531742095947266, 10.118643760681152, -270.8583068847656), Vector3.new(-0.7017287611961365, -0.12409590184688568, -0.7015532851219177))
+    [3] = CFrame.new(Vector3.new(-60.084510803222656, 10.26303482055664, -219.95187377929688), Vector3.new(-0.34204673767089844, -0.07444572448730469, -0.9367294311523438))
+}
+
+game:GetService("ReplicatedStorage").Events.Action.SpellEvent:FireServer(unpack(args))
+wait(0)
+local args = {
+    [1] = "i said hey",
+    [3] = CFrame.new(Vector3.new(-127.78421783447266, 17.043302536010742, -303.6947021484375), Vector3.new(-0.8203915357589722, 0.005130785051733255, -0.5717792510986328))
+}
+
+game:GetService("ReplicatedStorage").Events.Action.SpellEvent:FireServer(unpack(args))
+
+end)
+local Section = Tab:NewSection("Cleo")
+Section:NewButton("Combo", "ButtonInfo", function()
+    print("Clicked")
+    local args = {
+    [1] = "oo ni le soro",
+    [3] = CFrame.new(Vector3.new(-374.0036926269531, 10.118643760681152, 391.84149169921875), Vector3.new(0.8052031993865967, -0.19339868426322937, 0.5605752468109131))
 }
 
 game:GetService("ReplicatedStorage").Events.Action.SpellEvent:FireServer(unpack(args))
 local args = {
-    [1] = "i said hey",
-    [3] = CFrame.new(Vector3.new(-127.78421783447266, 17.043302536010742, -303.6947021484375), Vector3.new(-0.8203915357589722, 0.005130785051733255, -0.5717792510986328))
+    [1] = "motus",
+    [3] = CFrame.new(Vector3.new(-345.467529296875, 10.307750701904297, 465.79931640625), Vector3.new(0.6317188143730164, -0.05811355635523796, 0.7730163335800171))
+}
+
+game:GetService("ReplicatedStorage").Events.Action.SpellEvent:FireServer(unpack(args))
+local args = {
+    [1] = "ohun pada",
+    [3] = CFrame.new(Vector3.new(-382.0863037109375, 10.118643760681152, 409.6456604003906), Vector3.new(0.6983049511909485, -0.114549919962883, 0.7065752744674683))
+}
+
+game:GetService("ReplicatedStorage").Events.Action.SpellEvent:FireServer(unpack(args))
+local args = {
+    [1] = "invisique",
+    [3] = CFrame.new(Vector3.new(-390.05303955078125, 10.118643760681152, 431.1131591796875), Vector3.new(0.49826779961586, -0.084796242415905, 0.8628666400909424))
+}
+
+game:GetService("ReplicatedStorage").Events.Action.SpellEvent:FireServer(unpack(args))
+local args = {
+    [1] = "resistus maledi",
+    [3] = CFrame.new(Vector3.new(127.89401245117188, 49.01870346069336, 635.5911254882812), Vector3.new(0.8309411406517029, 0.08551399409770966, 0.5497493147850037))
+}
+
+game:GetService("ReplicatedStorage").Events.Action.SpellEvent:FireServer(unpack(args))
+
+end)
+local Section = Tab:NewSection("Qetsiyah")
+Section:NewButton("Cure", "ButtonInfo", function()
+    print("Clicked")
+    local args = {
+    [1] = "immortalis vicissim",
+    [3] = CFrame.new(Vector3.new(-53.31980895996094, 10.118643760681152, 428.58502197265625), Vector3.new(-0.764951229095459, -0.03181415796279907, -0.6433020830154419))
+}
+
+game:GetService("ReplicatedStorage").Events.Action.SpellEvent:FireServer(unpack(args))
+end)
+Section:NewButton("Destroy the otherside", "ButtonInfo", function()
+    print("Clicked")
+    local args = {
+    [1] = "vist aboli anima por eternum",
+    [3] = CFrame.new(Vector3.new(270.45953369140625, 17.914249420166016, 773.8327026367188), Vector3.new(0.7979516386985779, 0.002315501682460308, 0.6027170419692993))
+}
+
+game:GetService("ReplicatedStorage").Events.Action.SpellEvent:FireServer(unpack(args))
+
+end)
+Section:NewButton("Ah Sha Lana", "ButtonInfo", function()
+    print("Clicked")
+    local args = {
+    [1] = "ah sha lana",
+    [3] = CFrame.new(Vector3.new(129.88153076171875, 43.15149688720703, 633.99169921875), Vector3.new(0.8353865146636963, 0.06970105320215225, 0.5452259182929993))
 }
 
 game:GetService("ReplicatedStorage").Events.Action.SpellEvent:FireServer(unpack(args))
